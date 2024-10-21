@@ -1,0 +1,9 @@
+name: User Variables
+on: push
+jobs: 
+    print:
+        runs-on: macos-latest
+        env:
+            USER: ${{ vars.USER }}
+        steps:
+        - run: echo "${USER}"
