@@ -11,4 +11,6 @@ jobs:
               with:
                 node-version: '20'
                 cache: pnpm
+            - run: npm install -g pnpm
+            - run: pnpm install
             - run: pnpm test
