@@ -10,13 +10,15 @@ jobs:
               uses: pnpm/action-setup@v2
               with:
                 version: '8'
+            - name: Check for pnpm-lock.yaml
+              run: ls -la typescript-project
             - name: Cache pnpm store
               uses: actions/cache@v3
               with:
-                path: ~/typescript-project/.pnpm-store
-                key: ${{ runner.os }}-pnpm-${{ hashFiles('typescript-project/pnpm-lock.yaml') }}
-                restore-keys: |
-                  ${{ runner.os }}-pnpm-
+                  path: ~/typescript-project/.pnpm-store
+                  key: ${{ runner.os }}-pnpm-${{ hashFiles('typescript-project/pnpm-lock.yaml') }}
+                  restore-keys: |
+                    ${{ runner.os }}-pnpm-
             - uses: actions/checkout@v4
             - uses: actions/setup-node@v4
               with:
