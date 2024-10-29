@@ -7,6 +7,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                cache: pnpm
             - name: Install pnpm 
               uses: pnpm/action-setup@v2
               with:
@@ -20,8 +24,4 @@ jobs:
                   key: ${{ runner.os }}-pnpm-${{ hashFiles('typescript-project/pnpm-lock.yaml') }}
                   restore-keys: |
                     ${{ runner.os }}-pnpm-
-            - uses: actions/setup-node@v4
-              with:
-                node-version: '20'
-                cache: pnpm
             - run: pnpm test
