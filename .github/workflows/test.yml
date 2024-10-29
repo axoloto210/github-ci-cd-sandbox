@@ -24,4 +24,8 @@ jobs:
                   key: ${{ runner.os }}-pnpm-${{ hashFiles('typescript-project/pnpm-lock.yaml') }}
                   restore-keys: |
                     ${{ runner.os }}-pnpm-
+            - name: Install dependencies
+              run: pnpm install
+              working-directory: ./typescript-project
             - run: pnpm test
+              working-directory: ./typescript-project
