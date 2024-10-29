@@ -11,8 +11,6 @@ jobs:
               uses: pnpm/action-setup@v2
               with:
                 version: '8'
-            - run: pnpm install
-              working-directory: ./typescript-project
             - uses: actions/setup-node@v4
               with:
                 node-version: '20'
