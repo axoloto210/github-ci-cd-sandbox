@@ -12,7 +12,7 @@ jobs:
               with:
                 version: '8'
             - name: Check for pnpm-lock.yaml
-              run: ls -la ~/typescript-project
+              run: ls -la typescript-project
             - uses: actions/setup-node@v4
               with:
                 node-version: '20'
