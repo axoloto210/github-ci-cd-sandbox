@@ -14,7 +14,7 @@ jobs:
               uses: actions/cache@v3
               with:
                 path: ~/typescript-project/.pnpm-store
-                key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+                key: ${{ runner.os }}-pnpm-${{ hashFiles('typescript-project/pnpm-lock.yaml') }}
                 restore-keys: |
                   ${{ runner.os }}-pnpm-
             - uses: actions/checkout@v4
